@@ -1,0 +1,133 @@
+*,
+body,
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #d0e1f9;
+}
+
+body {
+    background: url('https://media.giphy.com/media/FlodpfQUBSp20/giphy.gif');
+}
+
+.container {
+    margin: .5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    text-align: center;
+    margin: 0.5em auto;
+    margin-bottom: 1em;
+}
+
+section.sections {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    /* position: relative; */
+}
+
+.card {
+    background: #1e1f26;
+    position: relative;
+    border-radius: .5em;
+    margin: 1em auto;
+    padding: .5em;
+    transition: all ease-in-out .5s;
+    overflow: hidden;
+    max-width: 250px;
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+.card_img {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    height: 300px;
+}
+
+.card_details {
+    cursor: pointer;
+    text-align: center;
+    border-bottom: 4px solid red;
+}
+
+.card_details:hover {
+    color: red;
+}
+
+.card_slide {
+    transition: all ease-in-out .5s;
+    background: #1e1f26;
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    bottom: -20em;
+    width: 100%;
+    text-align: center;
+    line-height: 40px;
+}
+
+.card_slide.active {
+    border-top: 4px solid #229cff;
+    box-shadow: 0 0 10px #229cff;
+    bottom: 0;
+}
+
+.lds-hourglass {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.lds-hourglass:after {
+    content: " ";
+    display: block;
+    border-radius: 50%;
+    width: 0;
+    height: 0;
+    margin: 8px;
+    box-sizing: border-box;
+    border: 32px solid #fff;
+    border-color: #229cff transparent red transparent;
+    animation: lds-hourglass 1.2s infinite;
+}
+
+@keyframes lds-hourglass {
+    0% {
+        transform: rotate(0);
+        animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    }
+    50% {
+        transform: rotate(900deg);
+        animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+    100% {
+        transform: rotate(1800deg);
+    }
+}
+
+
+/* media queries */
+
+@media only screen and (min-width: 390px) {
+    section.sections {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .card {
+        margin: 1em;
+    }
+}
